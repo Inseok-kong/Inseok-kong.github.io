@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure rounded corners work */
+}
+
+.sidebar {
+    width: 280px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #ddd;
+}
+
+.sidebar h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.sidebar p {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.sidebar p i {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center icons and text */
+}
+
+.sidebar ul li a i {
+    margin-right: 8px;
+    width: 20px; /* Align icons */
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.content section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.content section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.content h2 {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+}
+
+.content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.6em;
+    }
+}
