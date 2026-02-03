@@ -4,7 +4,8 @@ title: University of Seoul
 inline: false
 ---
 
-**B.S. in Geoinformatics & Artificial Intelligence**  
-*March 2021 - Present*
+**University of Seoul (UOS), Seoul, South Korea**  
+*March 2022 - Present*
 
-- Double Major in Geoinformatics and AI.
+- B.S. in Geoinformatics
+- Double Major in Artificial Intelligence

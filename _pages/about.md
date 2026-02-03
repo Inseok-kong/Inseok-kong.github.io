@@ -15,7 +15,7 @@ experience: true # includes a list of experience items
 education: true # includes a list of education items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 services: false
-honors: false
+honors: true
 social: true  # includes social icons at the bottom of the page
 ---
 
