@@ -6,25 +6,26 @@ subtitle:
 
 profile:
   align: right
-  image: SohyunLee.png
+  image: prof_pic.jpg
   image_cicular: true # crops the image to make it circular
   address:
 
-news: true  # includes a list of news items
-experience: true # includes a list of experience items
-education: true # includes a list of education items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-services: true
-honors: true
+news: false  # includes a list of news items
+experience: false # includes a list of experience items
+education: false # includes a list of education items
+selected_papers: false # includes a list of papers marked as "selected={true}"
+services: false
+honors: false
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a graduate student in the Graduate School of Artificial Intelligence integrated M.S. & Ph.D. program at [POSTECH](https://www.postech.ac.kr). I am a member of the [Computer Vision Lab](http://cvlab.postech.ac.kr/lab/) at POSTECH, advised by Prof. [Suha Kwak](https://suhakwak.github.io). 
-Previously, I completed my B.S. in Mechanical Engineering at POSTECH.\
-\
-My research interests lie in computer vision and deep learning. I've worked on the robust recognition in adverse visual conditions, domain adaptation, and generalization. 
+I am an Undergraduate Student Researcher in the **Robotics and Computer Vision Lab** at **University of Seoul (UOS)**. 
+I am pursuing a double major in **Geoinformatics** and **Artificial Intelligence**.
 
-If you are interested in my research projects, please feel free to contact me.
+My research interests lie in the intersection of robotics, computer vision, and AI applications. 
+I am passionate about building intelligent systems that can understand and interact with the physical world.
+
+If you are interested in my research projects or potential collaborations, please feel free to contact me.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
