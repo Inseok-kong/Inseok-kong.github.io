@@ -10,10 +10,10 @@ profile:
   image_cicular: true # crops the image to make it circular
   address:
 
-news: false  # includes a list of news items
-experience: false # includes a list of experience items
-education: false # includes a list of education items
-selected_papers: false # includes a list of papers marked as "selected={true}"
+news: true  # includes a list of news items
+experience: true # includes a list of experience items
+education: true # includes a list of education items
+selected_papers: true # includes a list of papers marked as "selected={true}"
 services: false
 honors: false
 social: true  # includes social icons at the bottom of the page
