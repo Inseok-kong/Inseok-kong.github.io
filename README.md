@@ -1,3 +1,3 @@
-# Sohyun Lee's Homepage
+# Inseok Kong's Homepage
 
-This repository contains the source code for [my homepage](https://sohyun-l.github.io)
+
