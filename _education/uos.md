@@ -1,11 +1,8 @@
 ---
 layout: post
 title: University of Seoul
-inline: false
+inline: true
+start_end: March 2022 - Present
 ---
 
-**University of Seoul (UOS), Seoul, South Korea**  
-*March 2022 - Present*
-
-- B.S. in Geoinformatics
-- Double Major in Artificial Intelligence
+**University of Seoul** - B.S. in Geoinformatics, Double Major in Artificial Intelligence

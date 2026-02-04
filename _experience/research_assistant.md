@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Undergraduate Student Researcher
-inline: false
+inline: true
+start_end: July 2025 - Present
 ---
 
-**Robotics and Computer Vision Lab, UOS, Seoul, South Korea**  
-*July 2025 - Present*
-
-- Undergraduate Research Student
+**Undergraduate Student Researcher** at Robotics and Computer Vision Lab, University of Seoul
