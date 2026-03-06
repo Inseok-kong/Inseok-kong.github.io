@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Our paper APC has been accepted to CVPR Findings 2026.
-date: 2026-03-05 12:00:00+0900
+date: 2026-02-27 12:00:00+0900
 inline: true
 ---
 
