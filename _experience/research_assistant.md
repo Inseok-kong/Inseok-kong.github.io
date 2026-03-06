@@ -5,4 +5,5 @@ inline: true
 start_end: July 2025 - Present
 ---
 
-**Undergraduate Student Researcher** at Robotics and Computer Vision Lab, University of Seoul
+**Undergraduate Student Researcher** at Robotics and Computer Vision Lab, University of Seoul<br>
+- Advisor: Prof. Jiyoung Jung
