@@ -23,6 +23,7 @@ I am an Undergraduate Student Researcher in the **Robotics and Computer Vision L
 I am pursuing a double major in **Geoinformatics** and **Artificial Intelligence**.
 
 My research interests lie in the intersection of robotics, computer vision, and AI applications. 
+Specifically, I have a strong interest in **3D point cloud classification** and its various real-world applications.
 I am passionate about building intelligent systems that can understand and interact with the physical world.
 
 If you are interested in my research projects or potential collaborations, please feel free to contact me.
