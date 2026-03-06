@@ -1,24 +1,35 @@
-          <div class="education">
-            <h2>Education</h2>
-            {% if site.education != blank -%} 
-            <div class="table-responsive">
-              <table class="table table-sm table-borderless">
-              {%- assign education = site.education | reverse -%} 
-              {% for item in education limit: site.education_limit %} 
-                <tr>
-                  <th scope="row">{{ item.start_end }}</th>
-                  <td>
-                    {% if item.inline -%} 
-                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-                    {%- else -%} 
-                      <a class="education-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                    {%- endif %} 
-                  </td>
-                </tr>
-              {%- endfor %} 
-              </table>
+<div class="education">
+  <h2>Education</h2>
+  {% if site.education != blank -%}
+  <div class="table-responsive">
+    <table class="table table-sm table-borderless">
+      {%- assign education = site.education | reverse -%}
+      {% for item in education limit: site.education_limit %}
+      <tr>
+        <th scope="row">{{ item.start_end }}</th>
+        <td>
+          {% if item.inline -%}
+          {% if item.img_path %}
+          <div class="row">
+            <div class="col-sm-3">
+              {% include figure.html path=item.img_path class="img-fluid rounded z-depth-1" zoomable=true %}
             </div>
-          {%- else -%} 
-            <p>No education so far...</p>
-          {%- endif %} 
+            <div class="col-sm-9">
+              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+            </div>
           </div>
+          {% else %}
+          {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+          {% endif %}
+          {%- else -%}
+          <a class="education-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {%- endif %}
+        </td>
+      </tr>
+      {%- endfor %}
+    </table>
+  </div>
+  {%- else -%}
+  <p>No education so far...</p>
+  {%- endif %}
+</div>
