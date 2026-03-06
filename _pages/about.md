@@ -19,7 +19,7 @@ honors: true
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am an Undergraduate Student Researcher in the **Robotics and Computer Vision Lab** at **University of Seoul (UOS)**. 
+I am an Undergraduate Student Researcher in the **[Robotics and Computer Vision Lab](https://sites.google.com/view/rcvuos/home)** at **University of Seoul (UOS)**. 
 I am pursuing a double major in **Geoinformatics** and **Artificial Intelligence**.
 
 My research interests lie in the intersection of robotics, computer vision, and AI applications. 
