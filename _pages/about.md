@@ -22,9 +22,9 @@ social: true  # includes social icons at the bottom of the page
 I am an Undergraduate Student Researcher in the **[Robotics and Computer Vision Lab](https://sites.google.com/view/rcvuos/home)** at **University of Seoul (UOS)**. 
 I am pursuing a double major in **Geoinformatics** and **Artificial Intelligence**.
 
-My research interests lie in the intersection of robotics, computer vision, and AI applications. 
-Specifically, I have a strong interest in **3D point cloud classification** and its various real-world applications.
-I am passionate about building intelligent systems that can understand and interact with the physical world.
+Currently, my research focuses on **3D computer vision**, with a particular emphasis on 3D point cloud processing and representation learning. I strive to pursue **generalizable and robust research** that can adapt to diverse real-world conditions.
+
+Looking forward, I am eager to expand my studies into Vision-Language Models (VLMs), multimodal architectures, robotics Vision-Language-Action (VLA) models, and 3D reconstruction. I am deeply passionate about building intelligent algorithms that can seamlessly understand and interact with their physical environments.
 
 If you are interested in my research projects or potential collaborations, please feel free to contact me.
 
