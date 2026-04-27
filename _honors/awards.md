@@ -3,9 +3,14 @@ layout: post
 inline: true
 ---
 
-- **Grand Prize Award**, Seoul Metropolitan Government Big Data Campus Competition, October 2025
-  - Awarded to the team GeoPath for outstanding performance in the 2025 Seoul Metropolitan Government Big Data Campus Competition, recognizing an excellent data-driven solution to social issues.
-
-- **Encouragement Award**, AI Convergence Problem Discovery Industry-Academia-Research Hackathon Competition, AICOSS, August 2025
-
-- **Dean's Award of the College of Engineering**, AICOSS Industry-Academia Collaborative Hands-On Deep Learning Winter Bootcamp Competition, AICOSS, January 2025
+- **Grand Prize Award** (Oct 2025)
+  <br>_Seoul Metropolitan Government Big Data Campus Competition_
+  <br>◦ Conducted location analysis for autonomous village bus routes in Seoul.
+  
+- **Encouragement Award** (Aug 2025)
+  <br>_AI Convergence Problem Discovery Industry-Academia-Research Hackathon (AICOSS)_
+  <br>◦ Generated a storybook utilizing Diffusion models and LLMs.
+  
+- **Dean’s Award of the College of Engineering** (Jan 2025)
+  <br>_AICOSS Industry-Academia Collaborative Deep Learning Winter Bootcamp_
+  <br>◦ Performed image classification utilizing 2D domain Vision Transformer (ViT).
