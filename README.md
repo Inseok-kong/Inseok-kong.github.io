@@ -4,6 +4,8 @@ Personal academic website for Inseok Kong, built with Jekyll and the al-folio th
 
 Site: <https://inseok-kong.github.io>
 
+Repository: <https://github.com/Inseok-kong/Inseok-kong.github.io>
+
 ## Local Development
 
 ```bash
