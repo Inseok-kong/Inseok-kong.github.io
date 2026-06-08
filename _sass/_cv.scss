@@ -37,6 +37,36 @@ a.btncv:hover {
  * CV TIME_TABLE styles
  *****************************/
 
+.cv-time-table {
+  display: grid;
+  grid-template-columns: minmax(10.5rem, max-content) minmax(0, 1fr);
+  column-gap: 1.5rem;
+  align-items: start;
+}
+
+.cv-time-table-date {
+  min-width: 0;
+  text-align: center;
+}
+
+.cv-time-table-badge {
+  display: inline-block;
+  min-width: 10.5rem;
+  max-width: 100%;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.cv-time-table-content {
+  min-width: 0;
+}
+
+.cv-time-table-content .title {
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
 p.location {
   font-size: 0.7rem;
   white-space: nowrap;
@@ -75,6 +105,22 @@ div.container-links {
   justify-content: flex-start;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .cv-time-table {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.75rem;
+  }
+
+  .cv-time-table-date {
+    text-align: left;
+  }
+
+  .cv-time-table-badge {
+    min-width: 0;
+    white-space: normal;
+  }
 }
 
 /*****************************
