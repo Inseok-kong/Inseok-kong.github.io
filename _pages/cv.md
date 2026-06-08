@@ -2,7 +2,8 @@
 layout: page
 title: CV
 permalink: /cv/
-nav: false
+nav: true
+nav_order: 3
 ---
 
 <!-- _pages/cv.md -->
