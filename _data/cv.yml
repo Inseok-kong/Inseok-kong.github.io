@@ -4,7 +4,7 @@
     - name: Name
       value: Inseok Kong
     - name: Email
-      value: <a href="mailto:kong796336@gmail.com">kong796336@gmail.com</a>
+      value: <a href="mailto:kong7963@uos.ac.kr">kong7963@uos.ac.kr</a>
     - name: Website
       value: <a href="https://inseok-kong.github.io/">inseok-kong.github.io</a>
     - name: GitHub
@@ -40,7 +40,7 @@
       institution: <a href="https://sites.google.com/view/rcvuos/home">Robotics and Computer Vision Lab</a>, University of Seoul
       year: Jul 2025 - Present
       description:
-        - Advisor: Prof. Jiyoung Jung
+        - "Advisor: Prof. Jiyoung Jung"
         - Proposed a test-time adaptation framework leveraging masked multi-view point clouds for efficient and robust single-step adaptation.
         - Formulated a distribution-aware adaptation method for 3D vision-language models using class-conditional Gaussian modeling.
         - Designed an input-level adversarial defense that generates point-wise counter-perturbations to improve robustness and transferability.

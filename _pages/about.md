@@ -10,7 +10,7 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     Seoul, Republic of Korea
-    kong796336 at gmail.com
+    kong7963 at uos.ac.kr
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
