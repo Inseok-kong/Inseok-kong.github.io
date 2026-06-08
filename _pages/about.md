@@ -2,35 +2,29 @@
 layout: about
 title: About
 permalink: /
-subtitle:
+subtitle: University of Seoul | 3D Vision, Robust Learning, Test-Time Adaptation
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_cicular: true # crops the image to make it circular
-  address:
+  image: Inseok_profile.JPG
+  image_circular: true # crops the image to make it circular
+  more_info: >
+    Seoul, Republic of Korea
+    kong796336 at gmail.com
 
-news: true  # includes a list of news items
-experience: true # includes a list of experience items
-education: true # includes a list of education items
+news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-services: true
-honors: true
-social: true  # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 ---
 
-I am an Undergraduate Student Researcher in the **[Robotics and Computer Vision Lab](https://sites.google.com/view/rcvuos/home)** at **University of Seoul (UOS)**. 
-I am pursuing a double major in **Geoinformatics** and **Artificial Intelligence**.
+I am an undergraduate student at the **University of Seoul (UOS)**, majoring in **Geo-Informatics** with a double major in **Artificial Intelligence**.
 
-Currently, my research focuses on **3D computer vision**, with a particular emphasis on 3D point cloud processing and representation learning. I strive to pursue **generalizable and robust research** that can adapt to diverse real-world conditions.
+I am currently an undergraduate research student in the **[Robotics and Computer Vision Lab](https://sites.google.com/view/rcvuos/home)**, advised by Prof. Jiyoung Jung. My research interests lie in **Test-Time Adaptation**, **Domain Generalization**, and **Robust Learning** under distribution shifts, especially for **3D vision** and **vision-language** settings.
 
-Looking forward, I am eager to expand my studies into Vision-Language Models (VLMs), multimodal architectures, robotics Vision-Language-Action (VLA) models, and 3D reconstruction. I am deeply passionate about building intelligent algorithms that can seamlessly understand and interact with their physical environments.
+I am interested in developing models that adapt reliably to unseen environments and remain robust under corruptions, adversarial perturbations, and real-world domain shifts.
 
-If you are interested in my research projects or potential collaborations, please feel free to contact me.
+<!--
+Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+-->

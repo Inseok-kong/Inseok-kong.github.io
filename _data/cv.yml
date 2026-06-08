@@ -1,0 +1,153 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Name
+      value: Inseok Kong
+    - name: Email
+      value: <a href="mailto:kong796336@gmail.com">kong796336@gmail.com</a>
+    - name: Website
+      value: <a href="https://inseok-kong.github.io/">inseok-kong.github.io</a>
+    - name: GitHub
+      value: <a href="https://github.com/Inseok-kong">Inseok-kong</a>
+    - name: LinkedIn
+      value: <a href="https://www.linkedin.com/in/iskong">iskong</a>
+    - name: Google Scholar
+      value: <a href="https://scholar.google.com/citations?user=N1GcUZgAAAAJ">Profile</a>
+    - name: Languages
+      value: Korean, English (TOEIC 835, expired)
+
+- title: Research Interests
+  type: list
+  contents:
+    - Test-Time Adaptation
+    - Domain Generalization
+    - Robust Learning under distribution shifts
+    - 3D vision and vision-language models
+
+- title: Education
+  type: time_table
+  contents:
+    - title: B.S. in Geo-Informatics; Double Major in Artificial Intelligence
+      institution: University of Seoul (UOS), Seoul, South Korea
+      year: Mar 2022 - Present
+      description:
+        - GPA 3.8 / 4.5
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Undergraduate Research Student
+      institution: <a href="https://sites.google.com/view/rcvuos/home">Robotics and Computer Vision Lab</a>, University of Seoul
+      year: Jul 2025 - Present
+      description:
+        - Advisor: Prof. Jiyoung Jung
+        - Proposed a test-time adaptation framework leveraging masked multi-view point clouds for efficient and robust single-step adaptation.
+        - Formulated a distribution-aware adaptation method for 3D vision-language models using class-conditional Gaussian modeling.
+        - Designed an input-level adversarial defense that generates point-wise counter-perturbations to improve robustness and transferability.
+
+- title: Projects
+  type: time_table
+  contents:
+    - title: <a href="https://sport-tier-app.web.app/">Sportier</a>
+      institution: UOS Entrepreneurship Club
+      year: Mar 2025 - Jul 2025
+      description:
+        - Developed a sports communication application with JavaScript and React.
+        - Implemented a location-based matching system for local sports enthusiasts.
+        - Designed and integrated a competitive tier classification system for user rankings.
+        - Led the project as president of the entrepreneurship club.
+
+- title: Publications
+  type: time_table
+  contents:
+    - title: '<a href="https://arxiv.org/abs/2604.15708">APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition</a>'
+      year: 2026
+      description:
+        - Geunyoung Jung, Soohong Kim, Inseok Kong, and Jiyoung Jung
+        - IEEE/CVF Conference on Computer Vision and Pattern Recognition Findings (CVPR Findings)
+    - title: 'MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds'
+      year: 2026
+      description:
+        - Inseok Kong, Geunyoung Jung, and Jiyoung Jung
+        - International Conference on Pattern Recognition (ICPR)
+    - title: 'DIRECT: Distribution-aware Representation Regularization for 3D Test-Time Adaptation under Corruptions'
+      year: 2026
+      description:
+        - Geunyoung Jung, Inseok Kong, and Jiyoung Jung
+        - Under review
+    - title: 'SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing'
+      year: 2026
+      description:
+        - Inseok Kong, Geunyoung Jung, and Jiyoung Jung
+        - Under review
+
+- title: Skills
+  type: nested_list
+  contents:
+    - title: Programming Languages
+      items:
+        - Python
+        - MATLAB
+        - ArcGIS
+        - LaTeX
+    - title: Database Systems
+      items:
+        - SQL
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - title: Grand Prize Award
+      institution: Seoul Metropolitan Government Big Data Campus Competition
+      year: Oct 2025
+      description:
+        - Conducted location analysis for autonomous village bus routes in Seoul.
+    - title: Encouragement Award
+      institution: AI Convergence Problem Discovery Industry-Academia-Research Hackathon (AICOSS)
+      year: Aug 2025
+      description:
+        - Generated a storybook utilizing diffusion models and LLMs.
+    - title: Dean's Award of the College of Engineering
+      institution: Industry-Academia Collaborative Deep Learning Winter Bootcamp (AICOSS)
+      year: Jan 2025
+      description:
+        - Performed image classification utilizing 2D-domain Vision Transformer (ViT).
+
+- title: Volunteer Experience
+  type: time_table
+  contents:
+    - title: KB Raschool 3rd Generation Mentor
+      institution: Samsung Sori-Saem Welfare Center
+      year: Mar 2025 - Feb 2026
+      description:
+        - Provided mathematics mentoring tailored for hearing-impaired students.
+        - Conducted academic and high school entrance counseling for 9th-grade students.
+    - title: Seoul Donghaeng Project Mentor
+      institution: Manna Regional Children's Center
+      year: Sep 2024 - Dec 2024
+      description:
+        - Provided mathematics mentoring for students from multicultural backgrounds.
+        - Conducted academic and high school entrance counseling for 8th-grade students.
+
+- title: Certifications
+  type: time_table
+  contents:
+    - title: SQL Developer (SQLD)
+      institution: Korea Data Agency (K-DATA)
+      year: Dec 2024
+    - title: Advanced Data Analytics Semi-Professional (ADsP)
+      institution: Korea Data Agency (K-DATA)
+      year: Nov 2024
+
+- title: Additional Information
+  type: time_table
+  contents:
+    - title: Republic of Korea Army
+      institution: 3rd Infantry Division, Cheorwon, South Korea
+      year: Feb 2023 - Aug 2024
+      description:
+        - Military service
+    - title: Interests
+      year: Formula 1
+      description:
+        - Max Verstappen, Red Bull Oracle Racing

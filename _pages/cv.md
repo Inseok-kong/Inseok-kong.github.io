@@ -1,17 +1,11 @@
 ---
-layout: page
-title: CV
+layout: cv
 permalink: /cv/
+title: CV
 nav: true
-nav_order: 3
+nav_order: 1
+cv_pdf:
+description: Academic CV summary.
+toc:
+  sidebar: left
 ---
-
-<!-- _pages/cv.md -->
-<div class="cv">
-  <p>
-    You can download my CV from <a href="{{ '/assets/pdf/Inseok_Kong_CV.pdf' | relative_url }}" target="_blank">here</a>.
-  </p>
-  <div class="embed-responsive embed-responsive-4by3 mt-4">
-    <iframe class="embed-responsive-item" src="{{ '/assets/pdf/Inseok_Kong_CV.pdf' | relative_url }}" width="100%" height="800px"></iframe>
-  </div>
-</div>
