@@ -8,4 +8,5 @@ img_path: assets/img/uos.png
 
 **University of Seoul**<br>
 - B.S. in **Geoinformatics** (Mar 2022 - Present)<br>
-- Double Major in **Artificial Intelligence** (Sep 2025 - Present)
+- Double Major in **Artificial Intelligence** (Sep 2025 - Present)<br>
+- GPA: **3.77 / 4.50**
