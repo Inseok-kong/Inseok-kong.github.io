@@ -65,17 +65,17 @@
       description:
         - Geunyoung Jung, Soohong Kim, Inseok Kong, and Jiyoung Jung
         - IEEE/CVF Conference on Computer Vision and Pattern Recognition Findings (CVPR Findings)
-    - title: 'MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds'
+    - title: "MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds"
       year: 2026
       description:
         - Inseok Kong, Geunyoung Jung, and Jiyoung Jung
         - International Conference on Pattern Recognition (ICPR)
-    - title: 'DIRECT: Distribution-aware Representation Regularization for 3D Test-Time Adaptation under Corruptions'
+    - title: "DIRECT: Distribution-aware Representation Regularization for 3D Test-Time Adaptation under Corruptions"
       year: 2026
       description:
         - Geunyoung Jung, Inseok Kong, and Jiyoung Jung
         - Under review
-    - title: 'SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing'
+    - title: "SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing"
       year: 2026
       description:
         - Inseok Kong, Geunyoung Jung, and Jiyoung Jung

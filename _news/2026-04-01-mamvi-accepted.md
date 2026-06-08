@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-My first-author paper, **"MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds"**, has been accepted to *ICPR 2026*.
+My first-author paper, **"MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds"**, has been accepted to _ICPR 2026_.

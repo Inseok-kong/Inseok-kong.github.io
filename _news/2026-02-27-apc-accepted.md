@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-My co-authored paper, **"APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition"**, has been accepted to *CVPR Findings 2026*.
+My co-authored paper, **"APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition"**, has been accepted to _CVPR Findings 2026_.
