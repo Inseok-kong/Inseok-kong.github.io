@@ -9,11 +9,11 @@
   color: "#009f36"
 
 "CVPR Findings":
-  url: https://cvpr.thecvf.com/
+  url: https://openaccess.thecvf.com/CVPR2026_findings
   color: "#005f9e"
 
 "ICPR":
-  url: https://iapr.org/
+  url: https://icpr2026.org/acceptedPapers.html
   color: "#00875a"
 
 "Under Review":
