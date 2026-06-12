@@ -10,4 +10,5 @@ redirect: https://drive.google.com/drive/folders/1qNn0Fezv467LErZWdUUvnuGriha0RQ
 **AICOSS Industry-Academia Collaborative Deep Learning Winter Bootcamp**
 
 Key contributions:
+
 - Trained and evaluated 2D domain Vision Transformer (ViT) architectures for image classification tasks.
