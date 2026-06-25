@@ -145,9 +145,11 @@
     - title: SQL Developer (SQLD)
       institution: Korea Data Agency (K-DATA)
       year: Dec 2024
+      preview: assets/img/kdata.png
     - title: Advanced Data Analytics Semi-Professional (ADsP)
       institution: Korea Data Agency (K-DATA)
       year: Nov 2024
+      preview: assets/img/kdata.png
 
 - title: Additional Information
   type: time_table
