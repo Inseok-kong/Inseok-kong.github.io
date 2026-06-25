@@ -37,15 +37,18 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Research Intern
+      institution: <a href="https://siit.kaist.ac.kr/">Statistical Inference and Information Theory Lab</a>, KAIST
+      year: Jun 2026 - Present
+      preview: assets/img/siit.png
+      description:
+        - "Advisor: Prof. Junmo Kim"
     - title: Undergraduate Research Student
       institution: <a href="https://sites.google.com/view/rcvuos/home">Robotics and Computer Vision Lab</a>, University of Seoul
-      year: Jul 2025 - Present
+      year: Jul 2025 - Jun 2026
       preview: assets/img/rcv.png
       description:
         - "Advisor: Prof. Jiyoung Jung"
-        - Proposed a test-time adaptation framework leveraging masked multi-view point clouds for efficient and robust single-step adaptation.
-        - Formulated a distribution-aware adaptation method for 3D vision-language models using class-conditional Gaussian modeling.
-        - Designed an input-level adversarial defense that generates point-wise counter-perturbations to improve robustness and transferability.
 
 - title: Projects
   type: time_table
@@ -53,15 +56,19 @@
     - title: <a href="https://drive.google.com/drive/folders/1Oxqe4gqTJWvj538TXSX1l1T0jOJIah6D?usp=sharing">LG Aimers 8th Cohort</a>
       institution: Track - LLM Compression
       year: Jan 2026 - Feb 2026
+      preview: assets/img/lg.png
     - title: <a href="https://sport-tier-app.web.app/">Sportier</a>
       institution: UOS Entrepreneurship Club
       year: Mar 2025 - Jul 2025
+      preview: assets/img/sportier.png
     - title: <a href="https://drive.google.com/drive/folders/1oziIfCo7LBx2OOjKV0RsNqqxKw03-SLn?usp=sharing">Football Big Data Camp</a>
       institution: Course - Data-Driven Football
       year: Feb 2025
+      preview: assets/img/coss.png
     - title: <a href="https://drive.google.com/drive/folders/1qNn0Fezv467LErZWdUUvnuGriha0RQ67?usp=sharing">AICOSS Industry-Academia Deep Learning Winter Bootcamp</a>
       institution: Deep Learning Bootcamp
       year: Jan 2025
+      preview: assets/img/aicoss.png
 
 - title: Publications
   type: time_table
