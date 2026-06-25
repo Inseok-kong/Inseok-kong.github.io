@@ -111,6 +111,11 @@
               {% endfor %}
             </div>
           {% endif %}
+          {% if content.preview %}
+            <div class="preview-img mt-3">
+              <img src="{{ content.preview | relative_url }}" class="preview z-depth-1 rounded" style="max-width: 200px; width: 100%; height: auto;">
+            </div>
+          {% endif %}
         </div>
       </div>
     </li>
