@@ -6,7 +6,7 @@ subtitle: University of Seoul | 3D Vision, Robust Learning, Test-Time Adaptation
 
 profile:
   align: right
-  image: Inseok_profile_new.png
+  image: Inseok_profile.JPG
   image_circular: true # crops the image to make it circular
   more_info: >
     Seoul, Republic of Korea
