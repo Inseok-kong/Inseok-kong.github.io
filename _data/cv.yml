@@ -30,6 +30,7 @@
     - title: B.S. in Geo-Informatics; Double Major in Artificial Intelligence
       institution: University of Seoul (UOS), Seoul, South Korea
       year: Mar 2022 - Present
+      preview: assets/img/uos.png
       description:
         - GPA 3.8 / 4.5
 
@@ -39,6 +40,7 @@
     - title: Undergraduate Research Student
       institution: <a href="https://sites.google.com/view/rcvuos/home">Robotics and Computer Vision Lab</a>, University of Seoul
       year: Jul 2025 - Present
+      preview: assets/img/rcv.png
       description:
         - "Advisor: Prof. Jiyoung Jung"
         - Proposed a test-time adaptation framework leveraging masked multi-view point clouds for efficient and robust single-step adaptation.
@@ -176,9 +178,11 @@
     - title: Republic of Korea Army
       institution: 3rd Infantry Division, Cheorwon, South Korea
       year: Feb 2023 - Aug 2024
+      preview: assets/img/mil.png
       description:
         - Military service
     - title: Interests
       year: Formula 1
+      preview: assets/img/max_f1.png
       description:
         - Max Verstappen, Red Bull Oracle Racing
