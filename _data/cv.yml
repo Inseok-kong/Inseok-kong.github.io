@@ -110,30 +110,18 @@
     - title: <a href="https://drive.google.com/drive/folders/1MbIlncnsH2_GFXjmVbi40fdsOmPg8axU?usp=drive_link">Excellence Award</a>
       institution: Seoul RISE AI Competition
       year: Jun 2026
-      description:
-        - "Project - SATOR: Sample-Adaptive Token Routing for Point Cloud Object Classification."
     - title: <a href="https://drive.google.com/drive/folders/1ulhpQe3srhIXiSV0YBw-MtuDQtbXOV-g?usp=drive_link">Excellence Award</a>
       institution: Capstone Design Project
       year: Jan 2026
-      description:
-        - Team - GeoPath
-        - Project - Optimal Route Planning for Customized Autonomous Shuttle Services in Seoul for Transportation-Vulnerable Elderly Citizens.
     - title: <a href="https://www.etnews.com/20251102000018">Grand Prize Award</a>
       institution: Seoul Metropolitan Government Big Data Campus Competition
       year: Oct 2025
-      description:
-        - Team - GeoPath
-        - Project - Optimal Route Planning for Customized Autonomous Shuttle Services in Seoul for Transportation-Vulnerable Elderly Citizens (Conducted location analysis for autonomous village bus routes in Seoul).
     - title: <a href="https://drive.google.com/drive/folders/1iODJIUSOF5vbSLbLXKyoV2O1LBkN0CBi?usp=sharing">Encouragement Award</a>
       institution: AI Convergence Problem Discovery Industry-Academia-Research Hackathon (AICOSS)
       year: Aug 2025
-      description:
-        - Generated a storybook utilizing diffusion models and LLMs.
     - title: <a href="https://drive.google.com/drive/folders/1qNn0Fezv467LErZWdUUvnuGriha0RQ67?usp=sharing">Dean's Award of the College of Engineering</a>
       institution: Industry-Academia Collaborative Deep Learning Winter Bootcamp (AICOSS)
       year: Jan 2025
-      description:
-        - Performed image classification utilizing 2D-domain Vision Transformer (ViT).
 
 - title: Volunteer Experience
   type: time_table
