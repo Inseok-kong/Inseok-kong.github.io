@@ -81,7 +81,7 @@
       description:
         - Geunyoung Jung, Soohong Kim, Inseok Kong, and Jiyoung Jung
         - IEEE/CVF Conference on Computer Vision and Pattern Recognition Findings (CVPR Findings)
-    - title: "MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds"
+    - title: '<a href="https://arxiv.org/abs/2606.12939">MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds</a>'
       year: 2026
       preview: assets/img/publication_preview/MAMVI_framework.png
       description:

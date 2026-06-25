@@ -2,29 +2,40 @@
   {% for content in entry.contents %}
     <li class="list-group-item">
       <div class="cv-time-table">
-        {% if content.year %}
+        {% if content.year or content.preview %}
           <div class="cv-time-table-date">
-            <table class="table-cv">
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle cv-time-table-badge">
-                      {{- content.year -}}
-                    </span>
-                  </td>
-                </tr>
-                {% if content.location %}
+            {% if content.year %}
+              <table class="table-cv">
+                <tbody>
                   <tr>
                     <td>
-                      <p class="location">
-                        <i class="fa-solid fa-location-dot iconlocation"></i>
-                        {{ content.location }}
-                      </p>
+                      <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle cv-time-table-badge">
+                        {{- content.year -}}
+                      </span>
                     </td>
                   </tr>
-                {% endif %}
-              </tbody>
-            </table>
+                  {% if content.location %}
+                    <tr>
+                      <td>
+                        <p class="location">
+                          <i class="fa-solid fa-location-dot iconlocation"></i>
+                          {{ content.location }}
+                        </p>
+                      </td>
+                    </tr>
+                  {% endif %}
+                </tbody>
+              </table>
+            {% endif %}
+            {% if content.preview %}
+              <div class="preview-img mt-2">
+                <img
+                  src="{{ content.preview | relative_url }}"
+                  class="preview z-depth-1 rounded"
+                  style="max-width: 150px; width: 100%; height: auto;"
+                >
+              </div>
+            {% endif %}
           </div>
         {% endif %}
         <div class="cv-time-table-content mt-2 mt-md-0">
@@ -109,11 +120,6 @@
                   </div>
                 {% endif %}
               {% endfor %}
-            </div>
-          {% endif %}
-          {% if content.preview %}
-            <div class="preview-img mt-3">
-              <img src="{{ content.preview | relative_url }}" class="preview z-depth-1 rounded" style="max-width: 200px; width: 100%; height: auto;">
             </div>
           {% endif %}
         </div>
