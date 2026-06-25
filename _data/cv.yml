@@ -53,26 +53,15 @@
     - title: <a href="https://drive.google.com/drive/folders/1Oxqe4gqTJWvj538TXSX1l1T0jOJIah6D?usp=sharing">LG Aimers 8th Cohort</a>
       institution: Track - LLM Compression
       year: Jan 2026 - Feb 2026
-      description:
-        - Worked on EXAONE model compression.
     - title: <a href="https://sport-tier-app.web.app/">Sportier</a>
       institution: UOS Entrepreneurship Club
       year: Mar 2025 - Jul 2025
-      description:
-        - Developed a sports communication application with JavaScript and React.
-        - Implemented a location-based matching system for local sports enthusiasts.
-        - Designed and integrated a competitive tier classification system for user rankings.
-        - Led the project as president of the entrepreneurship club.
     - title: <a href="https://drive.google.com/drive/folders/1oziIfCo7LBx2OOjKV0RsNqqxKw03-SLn?usp=sharing">Football Big Data Camp</a>
       institution: Course - Data-Driven Football
       year: Feb 2025
-      description:
-        - Studied applications of LLMs and retrieval-augmented generation (RAG) in football analytics.
     - title: <a href="https://drive.google.com/drive/folders/1qNn0Fezv467LErZWdUUvnuGriha0RQ67?usp=sharing">AICOSS Industry-Academia Deep Learning Winter Bootcamp</a>
       institution: Deep Learning Bootcamp
       year: Jan 2025
-      description:
-        - Performed image classification utilizing 2D domain Vision Transformer (ViT).
 
 - title: Publications
   type: time_table
