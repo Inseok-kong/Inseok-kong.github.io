@@ -129,12 +129,14 @@
     - title: KB Raschool 3rd Generation Mentor
       institution: Samsung Sori-Saem Welfare Center
       year: Mar 2025 - Feb 2026
+      preview: assets/img/kb.png
       description:
         - Provided mathematics mentoring tailored for hearing-impaired students.
         - Conducted academic and high school entrance counseling for 9th-grade students.
     - title: Seoul Donghaeng Project Mentor
       institution: Manna Regional Children's Center
       year: Sep 2024 - Dec 2024
+      preview: assets/img/seouldong.png
       description:
         - Provided mathematics mentoring for students from multicultural backgrounds.
         - Conducted academic and high school entrance counseling for 8th-grade students.
