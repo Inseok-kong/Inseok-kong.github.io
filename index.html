@@ -98,7 +98,7 @@
             <!-- APC Paper -->
             <div class="pub-row">
               <div class="pub-img">
-                <a href="images/apc.jpg" target="_blank"><img src="images/apc.jpg" alt="APC Framework Diagram"></a>
+                <img src="images/apc.jpg" alt="APC Framework Diagram">
               </div>
               <div class="pub-content">
                 <div class="pub-title">APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition</div>
@@ -113,7 +113,7 @@
             <!-- MAMVI Paper -->
             <div class="pub-row">
               <div class="pub-img">
-                <a href="images/mamvi.png" target="_blank"><img src="images/mamvi.png" alt="MAMVI Framework Diagram"></a>
+                <img src="images/mamvi.png" alt="MAMVI Framework Diagram">
               </div>
               <div class="pub-content">
                 <div class="pub-title">MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds</div>
@@ -286,5 +286,35 @@
         </td>
       </tr>
     </table>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal">
+      <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged view">
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.pub-img img').forEach(img => {
+          img.addEventListener('click', (e) => {
+            e.preventDefault();
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || 'Enlarged view';
+            lightbox.classList.add('show');
+          });
+        });
+
+        lightbox.addEventListener('click', () => {
+          lightbox.classList.remove('show');
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+            lightbox.classList.remove('show');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
