@@ -1,0 +1,220 @@
+\documentclass[a4paper,10pt]{article}
+
+% Package Imports
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+% Page Geometry Setup
+\geometry{left=1.4cm, top=1.2cm, right=1.4cm, bottom=1.2cm}
+\pagestyle{empty}
+
+% Color Definitions (Professional Deep Navy Palette)
+\definecolor{primary}{RGB}{15, 42, 74}       % Deep Navy
+\definecolor{accent}{RGB}{24, 90, 157}       % Steel Blue
+\definecolor{darktext}{RGB}{33, 37, 41}     % Soft Black
+\definecolor{subtext}{RGB}{80, 85, 90}      % Muted Gray
+
+% Hyperlink Setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    filecolor=accent,
+    urlcolor=accent
+}
+
+% Global Text Alignment & Paragraph Setup
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parindent}{0pt}
+
+% Section Formatting
+\titleformat{\section}
+  {\color{primary}\scshape\large\bfseries}
+  {}{0em}{}
+  [\color{primary}\titlerule \vspace{-4pt}]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+
+% Custom Icon Helper
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{0.9em}{#1}}}
+
+% Custom Heading Command using tabularx to prevent text overlap
+\newcommand{\cvheading}[4]{
+  \vspace{0.5mm}
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textit{\footnotesize #4} \\
+    \textit{\small #2} & \footnotesize\color{subtext}#3 \\
+  \end{tabularx}
+  \vspace{-1.5mm}
+}
+
+\newcommand{\cvitemstart}{\begin{itemize}[leftmargin=3.5mm, itemsep=0.6mm, topsep=0.8mm]}
+\newcommand{\cvitemend}{\end{itemize}\vspace{1.2mm}}
+
+\begin{document}
+\color{darktext}
+
+%-------------------------------------------------------------------------------
+% HEADER SECTION
+%-------------------------------------------------------------------------------
+\begin{center}
+    {\Huge \bfseries \color{primary} Inseok Kong} \\[2mm]
+    \small
+    Undergraduate Researcher \quad$\cdot$\quad Department of GeoInformatics \& AI \quad$\cdot$\quad University of Seoul \\
+    \vspace{1.5mm}
+    \small{
+    \socialicon{\faEnvelope} \href{mailto:kong7963@uos.ac.kr}{kong7963@uos.ac.kr} \quad$\vert$\quad
+    \socialicon{\faGlobe} \href{https://inseok-kong.github.io/}{inseok-kong.github.io} \quad$\vert$\quad
+    \socialicon{\faGraduationCap} \href{https://scholar.google.com/citations?user=N1GcUZgAAAAJ&hl=ko}{Google Scholar} \quad$\vert$\quad
+    \socialicon{\faGithub} \href{https://github.com/Inseok-kong}{Inseok-kong} \quad$\vert$\quad
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/iskong}{iskong}
+    }
+\end{center}
+\vspace{-2mm}
+
+%-------------------------------------------------------------------------------
+% RESEARCH INTERESTS
+%-------------------------------------------------------------------------------
+\section{Research Interests}
+\vspace{0.5mm}
+I am broadly interested in \textbf{Trustworthy Artificial Intelligence}, with a primary focus on \textbf{Computer Vision}. My research has primarily centered on \textbf{Test-Time Adaptation (TTA)} to enable vision models to reliably adapt to real-world distribution shifts and environmental corruptions. Recently, I am expanding my research focus toward \textbf{Uncertainty Calibration} and object hallucination mitigation in vision-language models, striving to build reliable, well-calibrated, and robust visual intelligence systems.
+\vspace{0.5mm}
+
+%-------------------------------------------------------------------------------
+% EDUCATION
+%-------------------------------------------------------------------------------
+\section{Education}
+\cvheading{University of Seoul}{B.S. in GeoInformatics and Artificial Intelligence (Double Major)}{Seoul, South Korea}{Mar 2022 -- Present}
+\cvitemstart
+    \item \textbf{Cumulative GPA:} 3.8 / 4.5
+    \item \textbf{Relevant Coursework:} Machine Learning, Deep Learning, Pattern Recognition, Data Structures, Algorithms.
+\cvitemend
+
+%-------------------------------------------------------------------------------
+% PUBLICATIONS & MANUSCRIPTS
+%-------------------------------------------------------------------------------
+\section{Publications \& Preprints \hfill \normalfont\footnotesize\color{subtext}[C: Conference, S: Submitted]}
+\vspace{0.5mm}
+
+\begin{enumerate}[leftmargin=*, labelsep=0.5em, itemsep=2.5mm]
+    \item[\textbf{[C.1]}] \begin{tabularx}{\linewidth}[t]{@{}X @{\hspace{1.5em}} r@{}}
+    \href{https://openaccess.thecvf.com/content/CVPR2026F/html/Jung_APC_Transferable_and_Efficient_Adversarial_Point_Counterattack_for_Robust_3D_CVPRF_2026_paper.html}{\textbf{APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition}} & \textit{\footnotesize Mar 2026} \\
+    {\small Geunyoung Jung, Soohong Kim, \underline{\textbf{Inseok Kong}}, and Jiyoung Jung} & \textit{\footnotesize Denver, CO, USA} \\
+    {\small\textit{IEEE/CVF Conference on Computer Vision and Pattern Recognition Findings (CVPR Findings)}} & 
+    \end{tabularx}
+
+    \item[\textbf{[C.2]}] \begin{tabularx}{\linewidth}[t]{@{}X @{\hspace{1.5em}} r@{}}
+    \href{https://arxiv.org/abs/2606.12939}{\textbf{MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds}} & \textit{\footnotesize Jul 2026} \\
+    {\small\underline{\textbf{Inseok Kong}}, Geunyoung Jung, and Jiyoung Jung} & \textit{\footnotesize Lyon, France} \\
+    {\small\textit{IEEE/IAPR International Conference on Pattern Recognition (ICPR)} \textbf{\textcolor{accent}{(Oral Presentation)}}} & 
+    \end{tabularx}
+
+    \item[\textbf{[S.1]}] \begin{tabularx}{\linewidth}[t]{@{}X @{\hspace{1.5em}} r@{}}
+    \textbf{SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing} & \textit{\footnotesize Submitted} \\
+    {\small\underline{\textbf{Inseok Kong}}, Geunyoung Jung, and Jiyoung Jung} & \\
+    {\small\textit{Under Review}} & 
+    \end{tabularx}
+
+    \item[\textbf{[S.2]}] \begin{tabularx}{\linewidth}[t]{@{}X @{\hspace{1.5em}} r@{}}
+    \textbf{Mitigating Feature Collapse for Test-Time Adaptation of 3D VLMs via Distribution-Guided Regularization} & \textit{\footnotesize Submitted} \\
+    {\small Geunyoung Jung, \underline{\textbf{Inseok Kong}}, and Jiyoung Jung} & \\
+    {\small\textit{Under Review}} & 
+    \end{tabularx}
+\end{enumerate}
+\vspace{0.5mm}
+
+%-------------------------------------------------------------------------------
+% RESEARCH EXPERIENCE
+%-------------------------------------------------------------------------------
+\section{Research Experience}
+
+\cvheading{\href{https://siit.kaist.ac.kr/}{Statistical Inference and Information Theory Lab (SIIT)}}{Undergraduate Research Student (Advisor: Prof. Junmo Kim)}{KAIST, Daejeon, South Korea}{Jul 2026 -- Present}
+\cvitemstart
+    \item Conducting individual research on \textbf{Large Vision-Language Models (LVLMs)}, focusing on mitigating object hallucination and improving uncertainty calibration to address visual-textual misalignment and enhance multimodal trustworthiness.
+\cvitemend
+
+\cvheading{\href{https://sites.google.com/view/rcvuos/home}{Robotics and Computer Vision Lab (RCV)}}{Undergraduate Research Student (Advisor: Prof. Jiyoung Jung)}{University of Seoul, South Korea}{Jul 2025 -- Jun 2026}
+\cvitemstart
+    \item Researched \textbf{3D Test-Time Adaptation (TTA)} under severe domain shifts, investigating lightweight online adaptation strategies for 3D point cloud networks to maintain high inference accuracy while eliminating backpropagation overheads.
+    \item Investigated \textbf{Point Cloud Robustness \& 3D Adversarial Defense}, studying structural vulnerabilities of 3D point cloud classification architectures and exploring input-level defense mechanisms to neutralize point perturbations dynamically.
+    \item Explored robust representation alignment for \textbf{3D Vision-Language Models (VLMs)}, addressing feature collapse and cross-modal misalignment issues under environmental corruptions and out-of-distribution (OOD) scenarios.
+\cvitemend
+
+%-------------------------------------------------------------------------------
+% PROJECTS
+%-------------------------------------------------------------------------------
+\section{Projects}
+
+\cvheading{LG Aimers 8th Cohort}{Track: LLM Compression}{Online}{Jan 2026 -- Feb 2026}
+\cvitemstart
+    \item Researched and applied model compression \& optimization techniques (pruning, quantization) on EXAONE Large Language Models.
+\cvitemend
+
+\cvheading{Optimal Autonomous Shuttle Route Planning}{Capstone Design Project \& Seoul Big Data Campus}{Seoul, South Korea}{Oct 2025 -- Jan 2026}
+\cvitemstart
+    \item Developed optimal route planning algorithms using mobility big data to support customized autonomous shuttle services for transportation-vulnerable elderly citizens in Seoul.
+\cvitemend
+
+\cvheading{Sportier (UOS Entrepreneurship Club)}{Lead Developer \& President (Tools: React.js, JavaScript)}{Seoul, South Korea}{Mar 2025 -- Jul 2025}
+\cvitemstart
+    \item Led the entrepreneurship club as president and developed a sports matchmaking web application featuring location-based matching and competitive tier rankings.
+\cvitemend
+
+\cvheading{Football Big Data Analytics}{Football Big Data Camp}{Seoul, South Korea}{Feb 2025}
+\cvitemstart
+    \item Investigated practical applications of LLMs and Retrieval-Augmented Generation (RAG) in football performance analytics.
+\cvitemend
+
+%-------------------------------------------------------------------------------
+% HONORS & AWARDS
+%-------------------------------------------------------------------------------
+\section{Honors \& Awards}
+\cvheading{Excellence Award}{Seoul RISE AI Competition (Project: SATOR)}{Seoul, South Korea}{Jun 2026}
+\cvheading{Grand Prize (Seoul Mayor Award)}{Seoul Metropolitan Big Data Campus Competition}{Seoul, South Korea}{Oct 2025}
+\cvheading{Excellence Award}{UOS Capstone Design Project}{Seoul, South Korea}{Jan 2026}
+\cvheading{Encouragement Award}{AICOSS Industry-Academia Hackathon (Diffusion \& LLM Storybook)}{Seoul, South Korea}{Aug 2025}
+\cvheading{Dean's Award of College of Engineering}{AICOSS Deep Learning Bootcamp (2D ViT Classification)}{Seoul, South Korea}{Jan 2025}
+
+%-------------------------------------------------------------------------------
+% VOLUNTEER & MENTORING
+%-------------------------------------------------------------------------------
+\section{Volunteer \& Mentoring}
+
+\cvheading{KB Raschool 3rd Generation Mentor}{Samsung Sori-Saem Welfare Center}{Seoul, South Korea}{Mar 2025 -- Feb 2026}
+\cvitemstart
+    \item Provided tailored mathematics mentoring and academic counseling for hearing-impaired 9th-grade students.
+\cvitemend
+
+\cvheading{Seoul Donghaeng Project Mentor}{Manna Regional Children's Center}{Seoul, South Korea}{Sep 2024 -- Dec 2024}
+\cvitemstart
+    \item Conducted mathematics mentoring and high school entrance guidance for multicultural 8th-grade students.
+\cvitemend
+
+%-------------------------------------------------------------------------------
+% SKILLS, CERTIFICATIONS & LANGUAGES
+%-------------------------------------------------------------------------------
+\section{Skills, Certifications \& Languages}
+\begin{itemize}[leftmargin=3.5mm, itemsep=1.2mm]
+    \item \textbf{Technical Skills:} Python, PyTorch, MATLAB, \LaTeX, Git, Linux / Ubuntu
+    \item \textbf{SQL Developer (SQLD)}, \textit{\small Korea Data Agency (K-DATA)} \hfill \textit{\footnotesize Dec 2024}
+    \item \textbf{Advanced Data Analytics Semi-Professional (ADsP)}, \textit{\small Korea Data Agency (K-DATA)} \hfill \textit{\footnotesize Nov 2024}
+    \item \textbf{English:} \textit{TOEIC (835)} \hfill \textit{\footnotesize Aug 2022 (Expired)}
+\end{itemize}
+
+%-------------------------------------------------------------------------------
+% ADDITIONAL INFORMATION
+%-------------------------------------------------------------------------------
+\section{Additional Information}
+\begin{itemize}[leftmargin=3.5mm, itemsep=1.2mm]
+    \item \textbf{Military Service:} Republic of Korea Army (Sergeant, Honorably Discharged) \hfill \textit{\footnotesize Feb 2023 -- Aug 2024}
+    \item \textbf{Interests:} Formula 1 (Red Bull Racing / Max Verstappen)
+\end{itemize}
+
+\end{document}
