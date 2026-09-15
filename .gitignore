@@ -6,4 +6,5 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-!cv.tex
+*.tex
+cv.tex
