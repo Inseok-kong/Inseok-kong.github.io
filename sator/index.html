@@ -365,11 +365,15 @@
 
       <!-- Action Links -->
       <div class="links-bar">
-        <a href="#" class="btn btn-primary">
+        <a href="https://arxiv.org/abs/2610.21367" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <i class="fa-solid fa-file-lines"></i>
-          <span>Paper</span>
+          <span>arXiv</span>
         </a>
-        <a href="#" class="btn">
+        <a href="https://arxiv.org/pdf/2610.21367" target="_blank" rel="noopener noreferrer" class="btn">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>PDF</span>
+        </a>
+        <a href="https://github.com/Inseok-kong/SATOR" target="_blank" rel="noopener noreferrer" class="btn">
           <i class="fa-brands fa-github"></i>
           <span>Code</span>
         </a>
@@ -384,7 +388,7 @@
     <div class="hero-card">
       <img src="../images/sator.png" alt="SATOR Framework Architecture" class="hero-image">
       <p class="hero-caption">
-        <strong>Overview of the proposed SATOR framework.</strong> SATOR introduces backpropagation-free 3D test-time adaptation via sample-adaptive token routing, achieving efficient and robust inference under domain corruptions.
+        <strong>Overview of the proposed SATOR framework.</strong> SATOR introduces backpropagation-free 3D test-time adaptation via sample-adaptive token routing, achieving state-of-the-art accuracy across ModelNet40-C, ScanObjectNN-C, and ShapeNet-C without multiple forward passes.
       </p>
     </div>
 
@@ -395,11 +399,11 @@
         Abstract
       </h2>
       <p class="abstract-text">
-        Deep 3D point cloud neural networks frequently suffer from severe performance degradation when deployed in real-world scenarios due to environmental corruptions, sensor noise, and cross-domain distribution shifts. While test-time adaptation (TTA) has shown promise in addressing distribution shifts without access to source data, conventional methods rely heavily on backpropagation during inference, incurring excessive computational overhead and memory footprint that prohibit real-time deployment on edge devices.
+        Test-time adaptation (TTA) mitigates the performance degradation of source-pretrained models on unlabeled test data under distribution shifts. Recent backpropagation-free token-purging methods address 3D point cloud distribution shifts by filtering unreliable tokens. However, their reliance on predefined purge-size candidates requires multiple forward passes per sample and increases inference cost.
       </p>
       <br>
       <p class="abstract-text">
-        In this paper, we propose <strong>SATOR (Sample-Adaptive Token Routing)</strong>, a novel backpropagation-free framework for 3D test-time adaptation. SATOR dynamically routes tokens conditioned on sample-specific geometric characteristics during inference, completely eliminating the need for gradient computation while maintaining high adaptability and robustness under various domain corruptions.
+        We propose <strong>SATOR (Sample-Adaptive TOken Routing)</strong>, a source-free and backpropagation-free 3D TTA framework that eliminates this search by deriving both the partitioning threshold and routing decision directly from each sample. SATOR computes token abnormality scores from complementary attention and geometric relation graphs. It then derives a sample-specific partition into retained and pruned tokens via Otsu-based separability, without evaluating candidate sizes. Keep-ratio-calibrated routing then selects the pruned prediction only when its entropy, penalized by the keep ratio, is lower than that of the original prediction. Extensive experiments on <strong>ModelNet40-C</strong>, <strong>ScanObjectNN-C</strong>, and <strong>ShapeNet-C</strong> demonstrate that SATOR achieves <strong>state-of-the-art accuracy</strong> on three 3D corruption benchmarks.
       </p>
     </section>
 
@@ -412,20 +416,26 @@
       <div class="feature-grid">
         <div class="feature-card">
           <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-          <div class="feature-title">Backpropagation-Free Adaptation</div>
-          <div class="feature-desc">Completely eliminates the computational bottleneck and memory overhead of gradient computation during inference, enabling efficient real-time 3D TTA.</div>
+          <div class="feature-title">Backpropagation-Free TTA</div>
+          <div class="feature-desc">Completely eliminates gradient computation and backward passes during inference, enabling extremely fast and memory-efficient real-time test-time adaptation.</div>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-route"></i></div>
-          <div class="feature-title">Sample-Adaptive Token Routing</div>
-          <div class="feature-desc">Dynamically routes tokens based on input point cloud characteristics to effectively adapt to corrupted geometries and out-of-distribution shifts.</div>
+          <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <div class="feature-title">Otsu-Based Token Partitioning</div>
+          <div class="feature-desc">Directly derives optimal sample-specific thresholds via Otsu-based separability without brute-force searching over predefined candidate purge sizes.</div>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
-          <div class="feature-title">Edge-Device Friendly</div>
-          <div class="feature-desc">Drastically lowers latency and memory consumption, making robust 3D vision models feasible on compute-constrained robotic and autonomous systems.</div>
+          <div class="feature-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="feature-title">Complementary Graph Abnormality</div>
+          <div class="feature-desc">Computes robust token abnormality scores by synergizing complementary self-attention maps with spatial geometric relation graphs.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+          <div class="feature-title">Calibrated Routing Decision</div>
+          <div class="feature-desc">Dynamically routes between original and pruned predictions using a keep-ratio-penalized entropy criterion to prevent aggressive over-pruning.</div>
         </div>
       </div>
     </section>
