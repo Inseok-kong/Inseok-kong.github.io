@@ -22,6 +22,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
   <style>
     body {
       font-family: 'Noto Sans', sans-serif;
@@ -282,8 +290,8 @@
           </div>
           <div class="column is-4">
             <div class="stat-box">
-              <div class="stat-number">1-Pass</div>
-              <div class="stat-desc">No Candidate Size Search Overhead</div>
+              <div class="stat-number">Search-Free</div>
+              <div class="stat-desc">Zero Candidate Purge-Size Search</div>
             </div>
           </div>
           <div class="column is-4">
@@ -297,22 +305,22 @@
         <!-- Highlight Cards -->
         <div class="highlight-card">
           <div class="highlight-title"><i class="fas fa-bolt mr-2 has-text-info"></i> Backpropagation-Free 3D Adaptation</div>
-          <p>Conventional TTA approaches rely on computationally heavy backward passes during inference, which requires extensive memory and high latency. SATOR achieves fast, source-free adaptation with zero gradient computation, making it well-suited for edge and robotics deployment.</p>
+          <p>Conventional 3D TTA approaches rely on gradient-based backpropagation during inference, incurring excessive computational cost and memory footprints. SATOR operates completely without backward passes or source data, making it highly suitable for resource-constrained edge systems.</p>
         </div>
 
         <div class="highlight-card">
           <div class="highlight-title"><i class="fas fa-diagram-project mr-2 has-text-info"></i> Complementary Attention & Geometric Relation Graphs</div>
-          <p>Rather than relying solely on self-attention, SATOR constructs complementary attention maps alongside geometric spatial relation graphs to capture distorted topological structures and reliably score abnormal point tokens.</p>
+          <p>Instead of relying on stored global statistics or self-attention alone, SATOR synergizes internal self-attention maps with spatial geometric relation graphs ($K_g$-NN affinity) to quantify how corruptions disrupt local neighborhood structures and reliably score abnormal tokens.</p>
         </div>
 
         <div class="highlight-card">
-          <div class="highlight-title"><i class="fas fa-chart-pie mr-2 has-text-info"></i> Otsu-Based Adaptive Token Partitioning</div>
-          <p>Existing token-purging methods evaluate multiple candidate sizes across several forward passes. SATOR derives the optimal partitioning threshold directly from the distribution of abnormality scores via Otsu-based separability, eliminating brute-force search.</p>
+          <div class="highlight-title"><i class="fas fa-chart-pie mr-2 has-text-info"></i> Otsu-Based Search-Free Token Partitioning</div>
+          <p>Prior token-purging methods evaluate multiple predefined purge-size candidates through iterative forward passes. SATOR completely eliminates candidate search by deriving an optimal sample-specific threshold directly from the score distribution via Otsu-based separability.</p>
         </div>
 
         <div class="highlight-card">
-          <div class="highlight-title"><i class="fas fa-route mr-2 has-text-info"></i> Keep-Ratio-Calibrated Routing</div>
-          <p>To avoid over-pruning on benign or minimally corrupted samples, SATOR introduces a calibrated routing mechanism that dynamically selects the pruned prediction only when its keep-ratio-penalized entropy is strictly lower than that of the original input.</p>
+          <div class="highlight-title"><i class="fas fa-route mr-2 has-text-info"></i> Keep-Ratio-Calibrated Dual-Branch Routing</div>
+          <p>SATOR compares predictions from the original sequence and the pruned sequence. To prevent low entropy from being favored solely due to aggressive token reduction, it calibrates prediction entropy by the keep ratio ($\rho = |\mathcal{K}|/M$), selecting the pruned branch only when $\frac{H(z_{\mathrm{prune}})}{\rho} < H(z_{\mathrm{orig}})$.</p>
         </div>
 
       </div>
