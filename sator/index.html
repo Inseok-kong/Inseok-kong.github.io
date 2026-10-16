@@ -147,6 +147,34 @@
     .copy-button:hover {
       background: #f0f0f0;
     }
+    .results-table {
+      width: 100%;
+      font-size: 0.95rem;
+    }
+    .results-table th, .results-table td {
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+    .results-table th:first-child, .results-table td:first-child {
+      text-align: left !important;
+    }
+    .results-table tr.is-ours td {
+      background: #f0f9ff;
+      font-weight: 700;
+    }
+    .results-table .best {
+      font-weight: 800;
+      color: #0284c7;
+    }
+    .results-table .second {
+      text-decoration: underline;
+    }
+    .results-caption {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -179,7 +207,7 @@
               Geunyoung Jung<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/rcvuos/home" target="_blank" rel="noopener noreferrer">Jiyoung Jung</a><sup>2,*</sup>
+              Jiyoung Jung<sup>2,*</sup>
             </span>
           </div>
 
@@ -321,6 +349,94 @@
         <div class="highlight-card">
           <div class="highlight-title"><i class="fas fa-route mr-2 has-text-info"></i> Keep-Ratio-Calibrated Dual-Branch Routing</div>
           <p>SATOR compares predictions from the original sequence and the pruned sequence. To prevent low entropy from being favored solely due to aggressive token reduction, it calibrates prediction entropy by the keep ratio ($\rho = |\mathcal{K}|/M$), selecting the pruned branch only when $\frac{H(z_{\mathrm{prune}})}{\rho} < H(z_{\mathrm{orig}})$.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Results -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 section-title has-text-centered">Main Results</h2>
+
+        <h3 class="title is-5">Mean accuracy under 15 corruption types</h3>
+        <div class="table-container">
+          <table class="table is-bordered is-hoverable results-table">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Venue</th>
+                <th>ModelNet40-C</th>
+                <th>ShapeNet-C</th>
+                <th>ScanObjectNN-C</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Source-only</td><td>–</td><td>54.16</td><td>61.35</td><td>36.96</td></tr>
+              <tr><td>TENT</td><td>ICLR'21</td><td>63.53</td><td>54.98</td><td>43.45</td></tr>
+              <tr><td>SAR</td><td>ICLR'23</td><td>59.64</td><td>60.17</td><td class="second">48.78</td></tr>
+              <tr><td>BFTT3D</td><td>CVPR'24</td><td>57.16</td><td>60.73</td><td>33.00</td></tr>
+              <tr><td>PG</td><td>ICCV'25</td><td>68.68</td><td class="second">64.40</td><td>46.78</td></tr>
+              <tr><td>LN-TTA</td><td>WACV'26</td><td class="second">69.71</td><td>64.35</td><td>48.50</td></tr>
+              <tr class="is-ours"><td>SATOR (Ours)</td><td>–</td><td class="best">70.26 <small>(+16.10)</small></td><td class="best">64.92 <small>(+3.57)</small></td><td class="best">49.43 <small>(+12.47)</small></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="results-caption">
+          Top-1 accuracy (%) averaged over 15 corruption types. Values in parentheses are gains over source-only. <span class="has-text-info has-text-weight-bold">Best</span> and <u>second best</u> are marked. Full per-corruption results and more baselines are in the paper.
+        </p>
+
+        <div class="columns">
+          <div class="column is-7">
+            <h3 class="title is-5">Runtime and memory (ScanObjectNN-C)</h3>
+            <div class="table-container">
+              <table class="table is-bordered is-hoverable results-table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Acc. (%)</th>
+                    <th>FPS</th>
+                    <th>Mem. (GB)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>BFTT3D</td><td>33.00</td><td>55.9</td><td>8.77</td></tr>
+                  <tr><td>PG</td><td>46.78</td><td>174.1</td><td>1.38</td></tr>
+                  <tr><td>LN-TTA</td><td>48.50</td><td>790.0</td><td>1.38</td></tr>
+                  <tr class="is-ours"><td>SATOR</td><td class="best">49.43</td><td>483.2</td><td>1.38</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="results-caption">
+              Skipping the purge-size search makes SATOR about 2.8× faster than PG, with higher accuracy and the same memory use.
+            </p>
+          </div>
+          <div class="column is-5">
+            <h3 class="title is-5">Noise token localization</h3>
+            <div class="table-container">
+              <table class="table is-bordered is-hoverable results-table">
+                <thead>
+                  <tr>
+                    <th>Score</th>
+                    <th>AUROC</th>
+                    <th>AP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Attention only</td><td>0.751</td><td>0.765</td></tr>
+                  <tr><td>Geometry only</td><td>0.794</td><td>0.683</td></tr>
+                  <tr class="is-ours"><td>Adaptive fusion</td><td class="best">0.839</td><td class="best">0.783</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="results-caption">
+              On background corruption (ScanObjectNN-C), fusing the attention and geometry scores locates corrupted tokens best.
+            </p>
+          </div>
         </div>
 
       </div>
