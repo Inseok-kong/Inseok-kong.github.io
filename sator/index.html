@@ -1,487 +1,370 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing (WACV 2027)</title>
+  <meta name="description" content="SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing (IEEE/CVF WACV 2027).">
+  <meta property="og:title" content="SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing"/>
+  <meta property="og:description" content="Official project page for SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing. Accepted to IEEE/CVF WACV 2027."/>
+  <meta property="og:url" content="https://inseok-kong.github.io/sator/"/>
+  <meta property="og:image" content="https://inseok-kong.github.io/images/sator.png"/>
+  <meta name="keywords" content="SATOR, 3D Test-Time Adaptation, Backpropagation-Free, Point Clouds, WACV 2027, Inseok Kong, Computer Vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Official project page for SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing. Accepted to IEEE/CVF WACV 2027.">
-  <meta name="keywords" content="SATOR, 3D Test-Time Adaptation, Backpropagation-Free, Point Clouds, WACV 2027, Inseok Kong, Deep Learning, Computer Vision">
-  <meta name="author" content="Inseok Kong, Geunyoung Jung, Jiyoung Jung">
+  <title>SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing">
-  <meta property="og:description" content="IEEE/CVF WACV 2027 - Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing.">
-  <meta property="og:image" content="https://inseok-kong.github.io/images/sator.png">
-  <meta property="og:url" content="https://inseok-kong.github.io/sator/">
-  <meta property="og:type" content="website">
-
-  <!-- Fonts & Icons -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- Bulma & Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <style>
-    :root {
-      --primary: #0284c7;
-      --primary-hover: #0369a1;
-      --primary-light: #e0f2fe;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --bg-page: #f8fafc;
-      --bg-card: #ffffff;
-      --border-color: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.03);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      line-height: 1.65;
-      padding-bottom: 60px;
+      font-family: 'Noto Sans', sans-serif;
+      color: #363636;
+      line-height: 1.6;
     }
-
-    /* Main Container */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-
-    /* Header Section */
-    header {
-      text-align: center;
-      margin: 40px 0 36px 0;
-    }
-
-    .conference-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--primary-light);
-      color: var(--primary);
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
       font-weight: 700;
-      font-size: 0.9rem;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-      border: 1px solid #bae6fd;
+      line-height: 1.25;
+      margin-bottom: 1.5rem !important;
     }
-
-    h1.project-title {
-      font-size: 2.25rem;
-      font-weight: 800;
-      color: #0f172a;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
     }
-
-    .authors {
-      font-size: 1.12rem;
-      font-weight: 500;
-      color: #334155;
-      margin-bottom: 10px;
+    .publication-authors a {
+      color: #3273dc;
     }
-
-    .authors a {
-      color: #0f172a;
-      text-decoration: none;
-      border-bottom: 1px dotted #94a3b8;
-      transition: all 0.2s;
+    .publication-authors a:hover {
+      text-decoration: underline;
     }
-
-    .authors a:hover {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
+    .author-block {
+      display: inline-block;
+      margin-right: 8px;
     }
-
-    .authors strong a {
-      font-weight: 700;
-      color: var(--primary);
+    .publication-institution {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 1.5rem;
     }
-
-    .affiliations {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      margin-bottom: 28px;
+    .publication-links {
+      margin-top: 1.2rem;
+      margin-bottom: 2rem;
     }
-
-    /* Action Buttons */
-    .links-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 36px;
+    .link-block {
+      display: inline-block;
+      margin: 4px;
     }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background-color: var(--bg-card);
-      color: #334155;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .btn:hover {
-      background-color: #f1f5f9;
-      color: var(--primary);
-      border-color: #cbd5e1;
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-hover);
-      color: #ffffff;
-      border-color: var(--primary-hover);
-    }
-
-    /* Teaser / Hero Card */
-    .hero-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow-md);
-      margin-bottom: 40px;
-    }
-
-    .hero-image {
+    .teaser img {
       width: 100%;
       border-radius: 8px;
-      display: block;
-      margin: 0 auto;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      border: 1px solid #e9ecef;
     }
-
-    .hero-caption {
-      margin-top: 16px;
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      text-align: center;
+    .teaser .subtitle {
+      font-size: 1rem;
+      color: #4a4a4a;
+      margin-top: 1rem;
       line-height: 1.6;
     }
-
-    /* Content Sections */
-    section {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 32px 36px;
-      margin-bottom: 32px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    h2.section-title {
-      font-size: 1.5rem;
+    .section-title {
+      font-family: 'Google Sans', sans-serif;
       font-weight: 700;
-      color: #0f172a;
-      letter-spacing: -0.01em;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      margin-bottom: 1.5rem;
     }
-
-    h2.section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--border-color);
-      margin-left: 10px;
-    }
-
-    .abstract-text {
-      font-size: 1.02rem;
-      line-height: 1.8;
-      color: #334155;
-      text-align: justify;
-    }
-
-    /* Feature Grid */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .feature-card {
+    .stat-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: 10px;
       padding: 20px;
-      transition: all 0.2s;
+      text-align: center;
+      transition: transform 0.2s;
     }
-
-    .feature-card:hover {
-      border-color: #cbd5e1;
-      box-shadow: var(--shadow-sm);
+    .stat-box:hover {
       transform: translateY(-2px);
     }
-
-    .feature-icon {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 12px;
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0284c7;
+      line-height: 1.2;
     }
-
-    .feature-title {
-      font-size: 1.05rem;
+    .stat-desc {
+      font-size: 0.95rem;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .highlight-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0284c7;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+    .highlight-title {
+      font-size: 1.1rem;
       font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 8px;
+      color: #1e293b;
+      margin-bottom: 6px;
     }
-
-    .feature-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* BibTeX Box */
-    .bibtex-wrapper {
+    pre {
+      background-color: #f5f5f5;
+      color: #363636;
+      font-size: 0.9em;
+      border-radius: 8px;
       position: relative;
-      margin-top: 14px;
     }
-
-    pre.bibtex-code {
-      background-color: #0f172a;
-      color: #e2e8f0;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
-      padding: 20px 22px;
-      border-radius: 10px;
-      overflow-x: auto;
-      line-height: 1.6;
-    }
-
-    .copy-btn {
+    .copy-button {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 6px;
-      padding: 6px 12px;
+      top: 10px;
+      right: 10px;
+      background: #ffffff;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      padding: 4px 10px;
       font-size: 0.8rem;
-      font-weight: 500;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      color: #363636;
       transition: all 0.2s;
     }
-
-    .copy-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-top: 48px;
-    }
-
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 640px) {
-      h1.project-title {
-        font-size: 1.7rem;
-      }
-      section {
-        padding: 24px 20px;
-      }
-      .links-bar {
-        gap: 8px;
-      }
-      .btn {
-        padding: 8px 14px;
-        font-size: 0.88rem;
-      }
+    .copy-button:hover {
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+<!-- Header / Hero Section -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
 
-    <!-- Header -->
-    <header>
-      <div class="conference-badge">
-        <i class="fa-solid fa-award"></i>
-        <span>IEEE/CVF WACV 2027</span>
+          <!-- Conference Badge -->
+          <div style="margin-bottom: 1rem;">
+            <span class="tag is-info is-light is-medium is-rounded" style="font-weight: 700; border: 1px solid #bce3fb;">
+              <i class="fas fa-award mr-2"></i> IEEE/CVF WACV 2027
+            </span>
+          </div>
+
+          <!-- Publication Title -->
+          <h1 class="title is-1 publication-title">
+            SATOR: Backpropagation-Free 3D Test-Time Adaptation<br>via Sample-Adaptive Token Routing
+          </h1>
+
+          <!-- Authors -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <strong><a href="https://inseok-kong.github.io/">Inseok Kong</a></strong><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Geunyoung Jung<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/rcvuos/home" target="_blank" rel="noopener noreferrer">Jiyoung Jung</a><sup>2,*</sup>
+            </span>
+          </div>
+
+          <!-- Institutions -->
+          <div class="publication-institution">
+            <span class="author-block"><sup>1</sup> Department of GeoInformatics, University of Seoul</span> &nbsp;•&nbsp;
+            <span class="author-block"><sup>2</sup> Department of Artificial Intelligence, University of Seoul</span>
+            <div style="font-size: 0.9rem; color: #7a7a7a; margin-top: 4px;">* Corresponding author</div>
+          </div>
+
+          <!-- Publication Links -->
+          <div class="publication-links">
+            <!-- Paper (PDF) link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2610.21367" target="_blank" rel="noopener noreferrer"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+
+            <!-- ArXiv link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2610.21367" target="_blank" rel="noopener noreferrer"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+
+            <!-- Code link -->
+            <span class="link-block">
+              <a href="https://github.com/Inseok-kong/SATOR" target="_blank" rel="noopener noreferrer"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            <!-- BibTeX Link -->
+            <span class="link-block">
+              <a href="#BibTeX" class="button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-quote-right"></i>
+                </span>
+                <span>BibTeX</span>
+              </a>
+            </span>
+          </div>
+
+        </div>
       </div>
-
-      <h1 class="project-title">
-        SATOR: Backpropagation-Free 3D Test-Time Adaptation<br>via Sample-Adaptive Token Routing
-      </h1>
-
-      <div class="authors">
-        <span><strong><a href="https://inseok-kong.github.io/">Inseok Kong</a></strong><sup>1</sup></span>, &nbsp;
-        <span>Geunyoung Jung<sup>2</sup></span>, and &nbsp;
-        <span><a href="https://sites.google.com/view/rcvuos/home" target="_blank" rel="noopener noreferrer">Jiyoung Jung</a><sup>2,*</sup></span>
-      </div>
-
-      <div class="affiliations">
-        <span><sup>1</sup> Department of GeoInformatics, University of Seoul</span> &nbsp;•&nbsp;
-        <span><sup>2</sup> Department of Artificial Intelligence, University of Seoul</span>
-        <div style="font-size: 0.88rem; color: #94a3b8; margin-top: 4px;">* Corresponding author</div>
-      </div>
-
-      <!-- Action Links -->
-      <div class="links-bar">
-        <a href="https://arxiv.org/abs/2610.21367" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <i class="fa-solid fa-file-lines"></i>
-          <span>arXiv</span>
-        </a>
-        <a href="https://arxiv.org/pdf/2610.21367" target="_blank" rel="noopener noreferrer" class="btn">
-          <i class="fa-solid fa-file-pdf"></i>
-          <span>PDF</span>
-        </a>
-        <a href="https://github.com/Inseok-kong/SATOR" target="_blank" rel="noopener noreferrer" class="btn">
-          <i class="fa-brands fa-github"></i>
-          <span>Code</span>
-        </a>
-        <a href="#bibtex" class="btn">
-          <i class="fa-solid fa-quote-right"></i>
-          <span>BibTeX</span>
-        </a>
-      </div>
-    </header>
-
-    <!-- Overview / Teaser Figure -->
-    <div class="hero-card">
-      <img src="../images/sator.png" alt="SATOR Framework Architecture" class="hero-image">
-      <p class="hero-caption">
-        <strong>Overview of the proposed SATOR framework.</strong> SATOR introduces backpropagation-free 3D test-time adaptation via sample-adaptive token routing, achieving state-of-the-art accuracy across ModelNet40-C, ScanObjectNN-C, and ShapeNet-C without multiple forward passes.
-      </p>
     </div>
+  </div>
+</section>
 
-    <!-- Abstract -->
-    <section id="abstract">
-      <h2 class="section-title">
-        <i class="fa-solid fa-align-left" style="color: var(--primary);"></i>
-        Abstract
+<!-- Teaser Image -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body pt-0">
+      <img src="../images/sator.png" alt="SATOR Framework Architecture Overview"/>
+      <h2 class="subtitle has-text-centered">
+        <em><b>Overview of the proposed SATOR framework.</b></em> SATOR introduces a source-free and backpropagation-free 3D TTA architecture that computes token abnormality scores from complementary attention and geometric relation graphs, adaptively derives sample-specific token partitions via Otsu-based separability, and routes predictions using keep-ratio-calibrated routing without evaluating candidate purge sizes.
       </h2>
-      <p class="abstract-text">
-        Test-time adaptation (TTA) mitigates the performance degradation of source-pretrained models on unlabeled test data under distribution shifts. Recent backpropagation-free token-purging methods address 3D point cloud distribution shifts by filtering unreliable tokens. However, their reliance on predefined purge-size candidates requires multiple forward passes per sample and increases inference cost.
-      </p>
-      <br>
-      <p class="abstract-text">
-        We propose <strong>SATOR (Sample-Adaptive TOken Routing)</strong>, a source-free and backpropagation-free 3D TTA framework that eliminates this search by deriving both the partitioning threshold and routing decision directly from each sample. SATOR computes token abnormality scores from complementary attention and geometric relation graphs. It then derives a sample-specific partition into retained and pruned tokens via Otsu-based separability, without evaluating candidate sizes. Keep-ratio-calibrated routing then selects the pruned prediction only when its entropy, penalized by the keep ratio, is lower than that of the original prediction. Extensive experiments on <strong>ModelNet40-C</strong>, <strong>ScanObjectNN-C</strong>, and <strong>ShapeNet-C</strong> demonstrate that SATOR achieves <strong>state-of-the-art accuracy</strong> on three 3D corruption benchmarks.
-      </p>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Key Contributions / Highlights -->
-    <section id="method">
-      <h2 class="section-title">
-        <i class="fa-solid fa-lightbulb" style="color: var(--primary);"></i>
-        Key Highlights
-      </h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-          <div class="feature-title">Backpropagation-Free TTA</div>
-          <div class="feature-desc">Completely eliminates gradient computation and backward passes during inference, enabling extremely fast and memory-efficient real-time test-time adaptation.</div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
-          <div class="feature-title">Otsu-Based Token Partitioning</div>
-          <div class="feature-desc">Directly derives optimal sample-specific thresholds via Otsu-based separability without brute-force searching over predefined candidate purge sizes.</div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-diagram-project"></i></div>
-          <div class="feature-title">Complementary Graph Abnormality</div>
-          <div class="feature-desc">Computes robust token abnormality scores by synergizing complementary self-attention maps with spatial geometric relation graphs.</div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
-          <div class="feature-title">Calibrated Routing Decision</div>
-          <div class="feature-desc">Dynamically routes between original and pruned predictions using a keep-ratio-penalized entropy criterion to prevent aggressive over-pruning.</div>
+<!-- Paper Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Test-time adaptation (TTA) mitigates the performance degradation of source-pretrained models on unlabeled test data under distribution shifts. Recent backpropagation-free token-purging methods address 3D point cloud distribution shifts by filtering unreliable tokens. However, their reliance on predefined purge-size candidates requires multiple forward passes per sample and increases inference cost.
+          </p>
+          <p>
+            We propose <strong>SATOR (Sample-Adaptive TOken Routing)</strong>, a source-free and backpropagation-free 3D TTA framework that eliminates this search by deriving both the partitioning threshold and routing decision directly from each sample. SATOR computes token abnormality scores from complementary attention and geometric relation graphs. It then derives a sample-specific partition into retained and pruned tokens via Otsu-based separability, without evaluating candidate sizes. Keep-ratio-calibrated routing then selects the pruned prediction only when its entropy, penalized by the keep ratio, is lower than that of the original prediction. Extensive experiments on <strong>ModelNet40-C</strong>, <strong>ScanObjectNN-C</strong>, and <strong>ShapeNet-C</strong> demonstrate that SATOR achieves <strong>state-of-the-art accuracy</strong> on three 3D corruption benchmarks.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Citation / BibTeX -->
-    <section id="bibtex">
-      <h2 class="section-title">
-        <i class="fa-solid fa-quote-left" style="color: var(--primary);"></i>
-        Citation
-      </h2>
-      <p style="font-size: 0.94rem; color: var(--text-muted); margin-bottom: 8px;">
-        If you find SATOR useful in your research, please consider citing:
-      </p>
-      <div class="bibtex-wrapper">
-        <button class="copy-btn" id="copy-btn" onclick="copyBibtex()">
-          <i class="fa-regular fa-copy"></i>
-          <span id="copy-text">Copy BibTeX</span>
-        </button>
-        <pre class="bibtex-code"><code id="bibtex-content">@inproceedings{kong2027sator,
+<!-- Key Insights & Method Details -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 section-title has-text-centered">Key Highlights & Contributions</h2>
+
+        <!-- Stat Row -->
+        <div class="columns is-multiline mb-5">
+          <div class="column is-4">
+            <div class="stat-box">
+              <div class="stat-number">BP-Free</div>
+              <div class="stat-desc">Zero Backward Passes Required</div>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="stat-box">
+              <div class="stat-number">1-Pass</div>
+              <div class="stat-desc">No Candidate Size Search Overhead</div>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="stat-box">
+              <div class="stat-number">SOTA</div>
+              <div class="stat-desc">ModelNet40-C, ScanObjectNN-C, ShapeNet-C</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Highlight Cards -->
+        <div class="highlight-card">
+          <div class="highlight-title"><i class="fas fa-bolt mr-2 has-text-info"></i> Backpropagation-Free 3D Adaptation</div>
+          <p>Conventional TTA approaches rely on computationally heavy backward passes during inference, which requires extensive memory and high latency. SATOR achieves fast, source-free adaptation with zero gradient computation, making it well-suited for edge and robotics deployment.</p>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-title"><i class="fas fa-diagram-project mr-2 has-text-info"></i> Complementary Attention & Geometric Relation Graphs</div>
+          <p>Rather than relying solely on self-attention, SATOR constructs complementary attention maps alongside geometric spatial relation graphs to capture distorted topological structures and reliably score abnormal point tokens.</p>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-title"><i class="fas fa-chart-pie mr-2 has-text-info"></i> Otsu-Based Adaptive Token Partitioning</div>
+          <p>Existing token-purging methods evaluate multiple candidate sizes across several forward passes. SATOR derives the optimal partitioning threshold directly from the distribution of abnormality scores via Otsu-based separability, eliminating brute-force search.</p>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-title"><i class="fas fa-route mr-2 has-text-info"></i> Keep-Ratio-Calibrated Routing</div>
+          <p>To avoid over-pruning on benign or minimally corrupted samples, SATOR introduces a calibrated routing mechanism that dynamically selects the pruned prediction only when its keep-ratio-penalized entropy is strictly lower than that of the original input.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 section-title">BibTeX</h2>
+    <div style="position: relative;">
+      <button class="copy-button" onclick="copyBibtex()">
+        <i class="far fa-copy mr-1"></i> <span id="copy-btn-text">Copy</span>
+      </button>
+      <pre><code id="bibtex-code">@inproceedings{kong2027sator,
   title={SATOR: Backpropagation-Free 3D Test-Time Adaptation via Sample-Adaptive Token Routing},
   author={Kong, Inseok and Jung, Geunyoung and Jung, Jiyoung},
   booktitle={IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
   year={2027}
 }</code></pre>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2026 Inseok Kong</p>
-    </footer>
-
+    </div>
   </div>
+</section>
 
-  <script>
-    function copyBibtex() {
-      const code = document.getElementById('bibtex-content').innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        const copyText = document.getElementById('copy-text');
-        const originalText = copyText.innerText;
-        copyText.innerText = 'Copied!';
-        setTimeout(() => {
-          copyText.innerText = originalText;
-        }, 2000);
-      });
-    }
-  </script>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> adapted from <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function copyBibtex() {
+    const code = document.getElementById('bibtex-code').innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      const btnText = document.getElementById('copy-btn-text');
+      btnText.innerText = 'Copied!';
+      setTimeout(() => {
+        btnText.innerText = 'Copy';
+      }, 2000);
+    });
+  }
+</script>
+
 </body>
 </html>
