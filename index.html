@@ -72,7 +72,7 @@
               <td style="padding:16px;width:100%;vertical-align:middle">
                 <ul class="timeline news-timeline">
                   <li class="timeline-item news-latest">
-                    <p><strong>[2026.10]</strong> Our work on backpropagation-free 3D test-time adaptation, <a href="https://arxiv.org/abs/2610.21367" target="_blank" rel="noopener noreferrer"><strong>SATOR</strong></a>, has been accepted to <strong>IEEE/CVF WACV 2027</strong>!</p>
+                    <p><strong>[2026.10]</strong> Our work on backpropagation-free 3D test-time adaptation, <a href="https://arxiv.org/abs/2610.21367" target="_blank" rel="noopener noreferrer"><strong>SATOR</strong></a>, has been accepted to <strong>WACV 2027</strong>!</p>
                   </li>
                   <li class="timeline-item">
                     <p><strong>[2026.07]</strong> Thrilled to announce that our paper, <a href="https://arxiv.org/abs/2606.12939" target="_blank" rel="noopener noreferrer"><strong>MAMVI</strong></a>, will be presented as an <strong style="color: #0284c7;">Oral Presentation</strong> at <strong>ICPR 2026</strong> in Lyon, France!</p>
@@ -92,47 +92,21 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Publications & Preprints</h2>
+                <div class="pub-header">
+                  <h2>Publications & Preprints</h2>
+                  <div class="pub-filter" role="group" aria-label="Filter publications">
+                    <button type="button" class="pub-filter-btn active" data-filter="selected">Selected</button>
+                    <button type="button" class="pub-filter-btn" data-filter="preprint">Preprint</button>
+                    <button type="button" class="pub-filter-btn" data-filter="full">Full</button>
+                  </div>
+                </div>
               </td>
             </tr>
           </tbody></table>
-          <div style="padding:0 16px;">
-
-            <!-- APC Paper -->
-            <div class="pub-row">
-              <div class="pub-img">
-                <img src="images/apc.jpg" alt="APC Framework Diagram">
-              </div>
-              <div class="pub-content">
-                <div class="pub-title">APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition</div>
-                <div class="pub-authors">Geunyoung Jung, Soohong Kim, <strong>Inseok Kong</strong>, Jiyoung Jung</div>
-                <div class="pub-venue"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition Findings (CVPR Findings)</em><br><small style="color: #666;">Mar. 2026</small></div>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2604.15708" target="_blank" rel="noopener noreferrer">paper</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/gyjung975/APC" target="_blank" rel="noopener noreferrer">code</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- MAMVI Paper -->
-            <div class="pub-row">
-              <div class="pub-img">
-                <img src="images/mamvi.png" alt="MAMVI Framework Diagram">
-              </div>
-              <div class="pub-content">
-                <div class="pub-title">MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds</div>
-                <div class="pub-authors"><strong>Inseok Kong</strong>, Geunyoung Jung, Jiyoung Jung</div>
-                <div class="pub-venue"><em>IEEE/IAPR International Conference on Pattern Recognition (ICPR)</em><br><small style="color: #0284c7; font-weight: bold;">(Oral Presentation)</small> &nbsp;<small style="color: #666;">Apr. 2026 (Accepted), Jul. 2026 (Oral Selected)</small></div>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2606.12939" target="_blank" rel="noopener noreferrer">paper</a> &nbsp;/&nbsp;
-                  <a href="mamvi/">project page</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/Inseok-kong/MAMVI" target="_blank" rel="noopener noreferrer">code</a>
-                </div>
-              </div>
-            </div>
+          <div id="pub-list" style="padding:0 16px;">
 
             <!-- SATOR Paper -->
-            <div class="pub-row">
+            <div class="pub-row" data-category="selected">
               <div class="pub-img">
                 <img src="images/sator.png" alt="SATOR Framework Diagram">
               </div>
@@ -148,8 +122,41 @@
               </div>
             </div>
 
+            <!-- MAMVI Paper -->
+            <div class="pub-row" data-category="selected">
+              <div class="pub-img">
+                <img src="images/mamvi.png" alt="MAMVI Framework Diagram">
+              </div>
+              <div class="pub-content">
+                <div class="pub-title">MAMVI: 3D Test-Time Adaptation via Masked Multi-View Point Clouds</div>
+                <div class="pub-authors"><strong>Inseok Kong</strong>, Geunyoung Jung, Jiyoung Jung</div>
+                <div class="pub-venue"><em>IEEE/IAPR International Conference on Pattern Recognition (ICPR)</em><br><small style="color: #0284c7; font-weight: bold;">(Oral Presentation)</small> &nbsp;<small style="color: #666;">Apr. 2026 (Accepted), Jul. 2026 (Oral Selected)</small></div>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2606.12939" target="_blank" rel="noopener noreferrer">paper</a> &nbsp;/&nbsp;
+                  <a href="mamvi/">project page</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/Inseok-kong/MAMVI" target="_blank" rel="noopener noreferrer">code</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- APC Paper -->
+            <div class="pub-row" data-category="published">
+              <div class="pub-img">
+                <img src="images/apc.jpg" alt="APC Framework Diagram">
+              </div>
+              <div class="pub-content">
+                <div class="pub-title">APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition</div>
+                <div class="pub-authors">Geunyoung Jung, Soohong Kim, <strong>Inseok Kong</strong>, Jiyoung Jung</div>
+                <div class="pub-venue"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition Findings (CVPR Findings)</em><br><small style="color: #666;">Mar. 2026</small></div>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2604.15708" target="_blank" rel="noopener noreferrer">paper</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/gyjung975/APC" target="_blank" rel="noopener noreferrer">code</a>
+                </div>
+              </div>
+            </div>
+
             <!-- 3D VLM TTA Preprint -->
-            <div class="pub-row">
+            <div class="pub-row" data-category="preprint">
               <div class="pub-img">
                 <img src="images/under_review.svg" alt="Under Review">
               </div>
@@ -161,7 +168,7 @@
             </div>
 
             <!-- 3D Continual TTA Preprint -->
-            <div class="pub-row">
+            <div class="pub-row" data-category="preprint">
               <div class="pub-img">
                 <img src="images/under_review.svg" alt="Under Review">
               </div>
@@ -173,6 +180,29 @@
             </div>
 
           </div>
+          <script>
+            (function () {
+              var buttons = document.querySelectorAll('.pub-filter-btn');
+              var rows = document.querySelectorAll('#pub-list .pub-row');
+              function applyFilter(filter) {
+                var last = null;
+                rows.forEach(function (row) {
+                  var show = filter === 'full' || row.dataset.category === filter;
+                  row.style.display = show ? '' : 'none';
+                  row.classList.remove('pub-row-last');
+                  if (show) last = row;
+                });
+                if (last) last.classList.add('pub-row-last');
+                buttons.forEach(function (btn) {
+                  btn.classList.toggle('active', btn.dataset.filter === filter);
+                });
+              }
+              buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () { applyFilter(btn.dataset.filter); });
+              });
+              applyFilter('selected');
+            })();
+          </script>
 
           <!-- Research Experience Section -->
           <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
